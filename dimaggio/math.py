@@ -55,7 +55,7 @@ def triangleNumber(n: int) -> int:
     return sum(list(range(n + 1)))
 
 
-def primeFactors(n) -> []:
+def primeFactors(n: int) -> list:
     if n == 1:
         return [0]
     a = []
@@ -69,7 +69,7 @@ def primeFactors(n) -> []:
 
 
 # Number of divisors of an integer.
-def tau(n):
+def tau(n: int):
     if n == 0:
         return 0
     if n == 1:
@@ -87,6 +87,34 @@ def tau(n):
     return divisors
 
 
+def properDivisors(n: int) -> list:
+    a = [1]
+    for i in range(2, n // 2 + 1):
+        if n % i == 0:
+            a.append(i)
+    return a
+
+
+def isAmicablePair(a: int, b: int) -> bool:
+    return a != b and sum(properDivisors(a)) == b and sum(properDivisors(b)) == a
+
+
+def fibonacci(n: int) -> int:
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+
+
+def factorial(n: int) -> int:
+    if 0 == n:
+        return 1
+    a = 1
+    for i in range(1, n + 1):
+        a *= i
+    return a
+
+
 # Vector Calculus ------------------------------------------------------------------------------------------------------
 class vector(object):
     # TODO: Maybe vectors need to be of equal length.
@@ -94,7 +122,7 @@ class vector(object):
     def add(a: list, b: list) -> list:
         if isinstance(b, int) or isinstance(b, float):
             b = [b for i in range(len(a))]
-            
+
         for i in range(min(len(a), len(b))):
             a[i] += b[i]
         return a[:min(len(a), len(b))]
@@ -103,7 +131,7 @@ class vector(object):
     def subtract(a: list, b: list) -> list:
         if isinstance(b, int) or isinstance(b, float):
             b = [b for i in range(len(a))]
-            
+
         for i in range(len(b)):
             b[i] = -b[i]
         return vector.add(a, b)
@@ -112,7 +140,7 @@ class vector(object):
     def multiply(a: list, b: list) -> list:
         if isinstance(b, int) or isinstance(b, float):
             b = [b for i in range(len(a))]
-            
+
         for i in range(min(len(a), len(b))):
             a[i] *= b[i]
         return a[:min(len(a), len(b))]
@@ -121,7 +149,7 @@ class vector(object):
     def divide(a: list, b: list) -> list:
         if isinstance(b, int) or isinstance(b, float):
             b = [b for i in range(len(a))]
-            
+
         for i in range(min(len(a), len(b))):
             a[i] /= b[i]
         return a[:min(len(a), len(b))]

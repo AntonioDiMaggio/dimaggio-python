@@ -19,6 +19,8 @@ def main():
     print(dimaggio.math.vector.magnitude(dimaggio.math.vector.normalized([1, 2, 3])))
     print(dimaggio.math.vector.dotProduct([32, 57, 23], [1, 2, 3, 4]))
     print(dimaggio.math.vector.distance([32, 57, 23], [1, 2, 3]))
+    print([dimaggio.math.fibonacci(i) for i in range(100)])
+    print([dimaggio.math.factorial(i) for i in range(100)])
 
 
 if "__main__" == __name__:
