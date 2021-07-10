@@ -52,7 +52,7 @@ def isCoprime(a: int, b: int) -> bool:
 
 
 def triangleNumber(n: int) -> int:
-    return sum(list(range(n + 1)))
+    return n * (n + 1) // 2
 
 
 def primeFactors(n: int) -> list:
@@ -117,64 +117,99 @@ def factorial(n: int) -> int:
 
 # Vector Calculus ------------------------------------------------------------------------------------------------------
 class vector(object):
-    # TODO: Maybe vectors need to be of equal length.
-    @staticmethod
-    def add(a: list, b: list) -> list:
-        if isinstance(b, int) or isinstance(b, float):
-            b = [b for i in range(len(a))]
+    def __init__(self, *elements: list[float]):
+        self._elements = list(map(float, elements))
 
-        for i in range(min(len(a), len(b))):
-            a[i] += b[i]
-        return a[:min(len(a), len(b))]
+    def __str__(self):
+        return ("(" + ("{}, " * (len(self._elements) - 1)) + "{})").format(*self._elements)
 
-    @staticmethod
-    def subtract(a: list, b: list) -> list:
-        if isinstance(b, int) or isinstance(b, float):
-            b = [b for i in range(len(a))]
+    def __len__(self):
+        return len(self._elements)
 
-        for i in range(len(b)):
-            b[i] = -b[i]
-        return vector.add(a, b)
+    def __add__(self, other):
+        return self.add(other)
+    
+    def __sub__(self, other):
+        return self.subtract(other)
+    
+    def __mul__(self, other):
+        return self.multiply(other)
 
-    @staticmethod
-    def multiply(a: list, b: list) -> list:
-        if isinstance(b, int) or isinstance(b, float):
-            b = [b for i in range(len(a))]
+    def __truediv__(self, other):
+        return self.divide(other)
 
-        for i in range(min(len(a), len(b))):
-            a[i] *= b[i]
-        return a[:min(len(a), len(b))]
+    def __neg__(self):
+        return self.negate()
 
-    @staticmethod
-    def divide(a: list, b: list) -> list:
-        if isinstance(b, int) or isinstance(b, float):
-            b = [b for i in range(len(a))]
+    def add(self, other):
+        if not isinstance(other, vector) and float(other):
+            other = vector(*[float(other) for i in range(len(self))])
+        if len(self) != len(other):
+            raise ValueError("Vectors are not of equal length!")
 
-        for i in range(min(len(a), len(b))):
-            a[i] /= b[i]
-        return a[:min(len(a), len(b))]
+        a = self._elements.copy()
+        for i in range(len(self)):
+            a[i] += other._elements[i]
+        return vector(*a)
 
-    @staticmethod
-    def negate(a: list) -> list:
-        for i in range(len(a)):
-            a[i] = -a[i]
-        return a
+    def subtract(self, other):
+        if not isinstance(other, vector) and float(other):
+            other = vector(*[float(other) for i in range(len(self))])
+        if len(self) != len(other):
+            raise ValueError("Vectors are not of equal length!")
 
-    @staticmethod
-    def magnitude(a: list) -> float:
-        for i in range(len(a)):
-            a[i] *= a[i]
+        a = self._elements.copy()
+        for i in range(len(self)):
+            a[i] -= other._elements[i]
+        return vector(*a)
+
+    def multiply(self, other):
+        if not isinstance(other, vector) and float(other):
+            other = vector(*[float(other) for i in range(len(self))])
+        if len(self) != len(other):
+            raise ValueError("Vectors are not of equal length!")
+
+        a = self._elements.copy()
+        for i in range(len(self)):
+            a[i] *= other._elements[i]
+        return vector(*a)
+
+    def divide(self, other):
+        if not isinstance(other, vector) and float(other):
+            other = vector(*[float(other) for i in range(len(self))])
+        if len(self) != len(other):
+            raise ValueError("Vectors are not of equal length!")
+
+        a = self._elements.copy()
+        for i in range(len(self)):
+            a[i] /= other._elements[i]
+        return vector(*a)
+
+    def negate(self):
+        a = self._elements.copy()
+        for i in range(len(self)):
+            a[i] = -self._elements[i]
+        return vector(*a)
+
+    def magnitude(self) -> float:
+        a = self._elements.copy()
+        for i in range(len(self)):
+            a[i] *= self._elements[i]
         return sum(a) ** 0.5
 
-    @staticmethod
-    def normalized(a: list) -> list:
-        return vector.divide(a, vector.magnitude(a.copy()))
+    def normalized(self):
+        return self / self.magnitude()
 
     @staticmethod
-    def dotProduct(a: list, b: list) -> float:
-        for i in range(min(len(a), len(b))):
+    def dotProduct(a, b) -> float:
+        if not isinstance(a, vector) or not isinstance(b, vector):
+            raise TypeError("dotProduct must be called on two objects of type vector!")
+        if len(a) != len(b):
+            raise ValueError("Vectors are not of equal length!")
+
+        a, b = a._elements.copy(), b._elements
+        for i in range(len(a)):
             a[i] *= b[i]
-        a = a[:min(len(a), len(b))]
         return sum(a)
 
     @staticmethod
@@ -182,7 +217,7 @@ class vector(object):
         pass
 
     @staticmethod
-    def distance(a: list, b: list) -> float:
-        a = vector.subtract(a, b)
-        a = vector.multiply(a, a)
-        return sum(a) ** 0.5
+    def distance(a, b) -> float:
+        a = a - b
+        a = a * a
+        return sum(a._elements) ** 0.5

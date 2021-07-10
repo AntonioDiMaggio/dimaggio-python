@@ -1,26 +1,43 @@
-import dimaggio.math
+from dimaggio.math import vector
 
 
 def main():
-    assert dimaggio.math.gcd(27, 33) == 3
-    assert dimaggio.math.lcm(27, 33) == 297
-    assert dimaggio.math.isCoprime(27, 33) is False
-    assert dimaggio.math.gcd(3, 5) == 1
-    assert dimaggio.math.lcm(3, 5) == 15
-    assert dimaggio.math.isCoprime(3, 5) is True
-    assert dimaggio.math.triangleNumber(7) == 28
-    print(dimaggio.math.vector.add([1, 2, 3], [1, 2, 3, 4]))
-    print(dimaggio.math.vector.subtract([1, 2, 3], [1, 2, 3, 4]))
-    print(dimaggio.math.vector.multiply([1, 2, 3], [1, 2, 3, 4]))
-    print(dimaggio.math.vector.divide([1, 2, 3], [1, 2, 3, 4]))
-    print(dimaggio.math.vector.negate([1, 2, 3]))
-    print(dimaggio.math.vector.magnitude([32, 57, 23]))
-    print(dimaggio.math.vector.normalized([1, 2, 3]))
-    print(dimaggio.math.vector.magnitude(dimaggio.math.vector.normalized([1, 2, 3])))
-    print(dimaggio.math.vector.dotProduct([32, 57, 23], [1, 2, 3, 4]))
-    print(dimaggio.math.vector.distance([32, 57, 23], [1, 2, 3]))
-    print([dimaggio.math.fibonacci(i) for i in range(100)])
-    print([dimaggio.math.factorial(i) for i in range(100)])
+    a = vector(1, 2, 3)
+    b = vector(4, 5, 6)
+    c = a + b
+    print(a, b, c)
+
+    a = vector(1, 2, 3)
+    b = vector(4, 5, 6)
+    c = a - b
+    print(a, b, c)
+
+    a = vector(1, 2, 3)
+    b = vector(4, 5, 6)
+    c = a * b
+    print(a, b, c)
+
+    a = vector(1, 2, 3)
+    b = vector(4, 5, 6)
+    c = a / b
+    print(a, b, c)
+
+    a = vector(1, 2, 3).negate()
+    b = vector(4, 5, 6).magnitude()
+    c = vector(1, 2, 3).normalized()
+    print(a, b, c)
+
+    a = vector(1, 2, 3)
+    b = vector(4, 5, 6)
+    c = vector(1, 2, 3)
+    print(vector.dotProduct(a, b))
+    print(a, b, c)
+
+    a = vector(1, 2, 3)
+    b = vector(4, 5, 6)
+    c = vector(1, 2, 3)
+    print(vector.distance(a, b))
+    print(a, b, c)
 
 
 if "__main__" == __name__:
