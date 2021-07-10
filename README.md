@@ -1,5 +1,5 @@
 # DiMaggio (Python)
-> Updated: 7/7/2021
+> Updated: 7/9/2021
 
 ![Repository Workflow Status](https://github.com/AntonioDiMaggio/dimaggio-python/actions/workflows/python-package.yml/badge.svg)
 
@@ -8,13 +8,36 @@
     * [What is the DiMaggio API?](#what-is-the-dimaggio-api)
 * [Modules](#modules)
     * [Math](#math)
+        * [Functions](#functions)
+        * [Vector (Class)](#vector-class)
 
 ## Description
 ### What is the DiMaggio API?
 
 ## Modules
 ### Math
-Implemented functions:
+#### Functions
 * gcd (Greatest Common Divisor)
 * lcm (Least Common Multiple)
 * isCoprime
+* triangleNumber
+* primeFactors
+* tau
+* properDivisors
+* isAmicablePair
+* fibonnaci
+* factorial
+
+#### Vector (Class)
+##### Methods
+* add
+* subtract
+* multiply
+* divide
+* negate
+* magnitude
+* normalized
+
+##### Static Methods
+* dotProduct
+* distance
