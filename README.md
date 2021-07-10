@@ -5,15 +5,13 @@
 
 ## Contents
 * [Description](#description)
-    * [What is the DiMaggio API?](#what-is-the-dimaggio-api)
 * [Modules](#modules)
     * [Math](#math)
         * [Functions](#functions)
         * [Vector (Class)](#vector-class)
 
 ## Description
-### What is the DiMaggio API?
-
+The DiMaggio API is a collection of utility and math functions and classes that I have found useful during my software engineering endeavors.
 ## Modules
 ### Math
 #### Functions
