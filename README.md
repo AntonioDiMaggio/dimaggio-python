@@ -17,8 +17,8 @@
 ## Modules
 ### Math
 #### Functions
-* gcd (Greatest Common Divisor)
-* lcm (Least Common Multiple)
+* gcd
+* lcm
 * isCoprime
 * triangleNumber
 * primeFactors
