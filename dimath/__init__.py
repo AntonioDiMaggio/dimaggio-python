@@ -117,7 +117,7 @@ def factorial(n: int) -> int:
 
 # Vector Calculus ------------------------------------------------------------------------------------------------------
 class vector(object):
-    def __init__(self, *elements: list[float]):
+    def __init__(self, *elements: list):
         self._elements = list(map(float, elements))
 
     def __str__(self):
@@ -143,7 +143,7 @@ class vector(object):
 
     def add(self, other):
         if not isinstance(other, vector) and float(other):
-            other = vector(*[float(other) for i in range(len(self))])
+            other = vector(*[float(other)]*len(self))
         if len(self) != len(other):
             raise ValueError("Vectors are not of equal length!")
 
@@ -154,7 +154,7 @@ class vector(object):
 
     def subtract(self, other):
         if not isinstance(other, vector) and float(other):
-            other = vector(*[float(other) for i in range(len(self))])
+            other = vector(*[float(other)]*len(self))
         if len(self) != len(other):
             raise ValueError("Vectors are not of equal length!")
 
@@ -165,7 +165,7 @@ class vector(object):
 
     def multiply(self, other):
         if not isinstance(other, vector) and float(other):
-            other = vector(*[float(other) for i in range(len(self))])
+            other = vector(*[float(other)]*len(self))
         if len(self) != len(other):
             raise ValueError("Vectors are not of equal length!")
 
@@ -176,7 +176,7 @@ class vector(object):
 
     def divide(self, other):
         if not isinstance(other, vector) and float(other):
-            other = vector(*[float(other) for i in range(len(self))])
+            other = vector(*[float(other)]*len(self))
         if len(self) != len(other):
             raise ValueError("Vectors are not of equal length!")
 

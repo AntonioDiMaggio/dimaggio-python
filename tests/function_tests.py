@@ -4,22 +4,22 @@ from dimath import vector
 def main():
     a = vector(1, 2, 3)
     b = vector(4, 5, 6)
-    c = a + b
+    c = a + 1
     print(a, b, c)
 
     a = vector(1, 2, 3)
     b = vector(4, 5, 6)
-    c = a - b
+    c = a - True
     print(a, b, c)
 
     a = vector(1, 2, 3)
     b = vector(4, 5, 6)
-    c = a * b
+    c = a * "1111"
     print(a, b, c)
 
     a = vector(1, 2, 3)
     b = vector(4, 5, 6)
-    c = a / b
+    c = a / 2.0
     print(a, b, c)
 
     a = vector(1, 2, 3).negate()
