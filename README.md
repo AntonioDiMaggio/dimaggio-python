@@ -1,20 +1,18 @@
-# DiMaggio (Python)
-> Updated: 7/9/2021
+# DiMath (Python)
+> Updated: 7/10/2021
 
 ![Repository Workflow Status](https://github.com/AntonioDiMaggio/dimaggio-python/actions/workflows/python-package.yml/badge.svg)
 
 ## Contents
 * [Description](#description)
-* [Modules](#modules)
-    * [Math](#math)
-        * [Functions](#functions)
-        * [Vector (Class)](#vector-class)
+* [Functions](#functions)
+* [Classes](#classes)
+    * [Vector](#vector-class)
 
 ## Description
-The DiMaggio API is a collection of utility and math functions and classes that I have found useful during my software engineering endeavors.
-## Modules
-### Math
-#### Functions
+The DiMath API is a collection of math functions and classes that I have found useful during my software engineering endeavors.
+
+## Functions
 * gcd
 * lcm
 * isCoprime
@@ -26,8 +24,9 @@ The DiMaggio API is a collection of utility and math functions and classes that 
 * fibonnaci
 * factorial
 
-#### Vector (Class)
-##### Methods
+## Classes
+### Vector
+#### Methods
 * add
 * subtract
 * multiply
