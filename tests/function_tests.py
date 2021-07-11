@@ -1,4 +1,4 @@
-from dimaggio.math import vector
+from dimath.math import vector
 
 
 def main():
