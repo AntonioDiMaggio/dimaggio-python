@@ -1,5 +1,5 @@
 """
-This module provides access to many math functions and constants from many areas of mathematics.
+This package provides access to many math functions and constants from many areas of mathematics.
 Constants:
 ...
 
@@ -9,6 +9,9 @@ lcm -> Least Common Multiple.
 isCoprime -> Are two numbers co-prime.
 triangelNumber -> Find nth triangle number.
 """
+
+__version__ = "0.0.0.7"
+__author__ = "Antonio DiMaggio"
 
 
 # Number Theory --------------------------------------------------------------------------------------------------------
@@ -56,15 +59,23 @@ def triangleNumber(n: int) -> int:
 
 
 def primeFactors(n: int) -> list:
-    if n == 1:
-        return [0]
     a = []
-    nSquare = int(n ** 0.5)
-    for i in range(2, nSquare + 1):
-        if n % i == 0:
-            a.append(i)
-            return a + primeFactors(int(n / i))
-    a.append(n)
+    left, right = 2, n
+    rightSquare = int(n ** 0.5) + 1
+    while left < rightSquare:
+        checkedAll = True
+        for i in range(left, rightSquare):
+            if right % i == 0:
+                left = i
+                a.append(left)
+                right //= left
+                rightSquare = int(right ** 0.5) + 1
+                checkedAll = False
+                break
+        if checkedAll:
+            break
+
+    a.append(right)
     return a
 
 
@@ -113,6 +124,18 @@ def factorial(n: int) -> int:
     for i in range(1, n + 1):
         a *= i
     return a
+
+
+def isPalindrome(a) -> bool:
+    a = str(a)
+    left = 0
+    right = len(a) - 1
+    while left < right:
+        if a[left] != a[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
 
 
 # Vector Calculus ------------------------------------------------------------------------------------------------------
