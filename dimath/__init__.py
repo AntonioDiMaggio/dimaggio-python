@@ -13,6 +13,7 @@ triangelNumber -> Find nth triangle number.
 __version__ = "0.0.0.7"
 __author__ = "Antonio DiMaggio"
 
+import random
 
 # Number Theory --------------------------------------------------------------------------------------------------------
 def gcd(a: int, b: int) -> int:
@@ -136,6 +137,40 @@ def isPalindrome(a) -> bool:
         left += 1
         right -= 1
     return True
+
+
+def randomNDigitNumber(n: int) -> int:
+    if n <= 0:
+        return 0
+    return int("".join([random.choice(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")) for i in range(n)]))
+
+
+def mean(a: list) -> float:
+    return sum(a) / len(a)
+
+
+def median(a: list) -> float:
+    a = sorted(a)
+    if len(a) % 2 == 0:
+        return (a[len(a) // 2] + a[len(a) // 2 - 1]) / 2
+    return a[len(a) // 2]
+
+
+def mode(a: list) -> float:
+    b = {}
+    for i in range(len(a)):
+        if a[i] in b:
+            b[a[i]] += 1
+        else:
+            b[a[i]] = 0
+
+    m = 0
+    count = 0
+    for i in b.keys():
+        if count < b[i]:
+            m = i
+            count = b[i]
+    return m
 
 
 # Vector Calculus ------------------------------------------------------------------------------------------------------
