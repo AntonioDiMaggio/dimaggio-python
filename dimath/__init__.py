@@ -1,9 +1,8 @@
 """
 This package provides access to many math functions and constants from many areas of mathematics.\n
-Constants:
-...
 
 Functions:\n
+
 gcd -> Greatest Common Divisor.\n
 lcm -> Least Common Multiple.\n
 isCoprime -> Determines if two numbers are co-prime.\n
