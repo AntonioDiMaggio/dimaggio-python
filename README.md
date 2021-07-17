@@ -48,25 +48,25 @@ if "__main__" == __name__:
 ```
 
 ## Functions
-dimath.**gcd**(a, b)\
-dimath.**lcm**(a, b)\
-dimath.**isCoprime**(a, b)\
-dimath.**triangleNumber**(n)\
-dimath.**primeFactors**(n)\
-dimath.**tau**(n)\
-dimath.**properDivisors**(n)\
-dimath.**isAmicablePair**(a, b)\
-dimath.**fibonacci**(n)\
-dimath.**factorial**(n)\
-dimath.**isPalindrome**(a)\
-dimath.**randomNDigitNumber**(n)\
-dimath.**mean**(a) / dimath.**average**(a) / dimath.**avg**(a)\
-dimath.**median**(a)\
-dimath.**mode**(a)\
-dimath.**setRange**(a)\
-dimath.**clamp**(n, minimum, maximum)\
-dimath.**clamp01**(n)\
-dimath.**lerp**(a, b, p) / dimath.**linearInterpolation**(a, b, p)
+dimath.**gcd**(_a, b_)\
+dimath.**lcm**(_a, b_)\
+dimath.**isCoprime**(_a, b_)\
+dimath.**triangleNumber**(_n_)\
+dimath.**primeFactors**(_n_)\
+dimath.**tau**(_n_)\
+dimath.**properDivisors**(_n_)\
+dimath.**isAmicablePair**(_a, b_)\
+dimath.**fibonacci**(_n_)\
+dimath.**factorial**(_n_)\
+dimath.**isPalindrome**(_a_)\
+dimath.**randomNDigitNumber**(_n_)\
+dimath.**mean**(_a_) / dimath.**average**(_a_) / dimath.**avg**(_a_)\
+dimath.**median**(_a_)\
+dimath.**mode**(_a_)\
+dimath.**setRange**(_a_)\
+dimath.**clamp**(_n, minimum, maximum_)\
+dimath.**clamp01**(_n_)\
+dimath.**lerp**(_a, b, p_) / dimath.**linearInterpolation**(_a, b, p_)
 
 ## Classes
 ### Vector
