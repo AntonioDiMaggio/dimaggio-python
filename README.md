@@ -1,5 +1,5 @@
 # DiMath (Python)
-> Updated: 7/10/2021
+> Updated: 7/17/2021
 
 ![Repository Workflow Status](https://github.com/AntonioDiMaggio/dimaggio-python/actions/workflows/python-package.yml/badge.svg)
 
@@ -48,28 +48,41 @@ if "__main__" == __name__:
 ```
 
 ## Functions
-* gcd
-* lcm
-* isCoprime
-* triangleNumber
-* primeFactors
-* tau
-* properDivisors
-* isAmicablePair
-* fibonnaci
-* factorial
+dimath.**gcd**(a, b)\
+dimath.**lcm**(a, b)\
+dimath.**isCoprime**(a, b)\
+dimath.**triangleNumber**(n)\
+dimath.**primeFactors**(n)\
+dimath.**tau**(n)\
+dimath.**properDivisors**(n)\
+dimath.**isAmicablePair**(a, b)\
+dimath.**fibonacci**(n)\
+dimath.**factorial**(n)\
+dimath.**isPalindrome**(a)\
+dimath.**randomNDigitNumber**(n)\
+dimath.**mean**(a) / dimath.**average**(a) / dimath.**avg**(a)\
+dimath.**median**(a)\
+dimath.**mode**(a)\
+dimath.**setRange**(a)\
+dimath.**clamp**(n, minimum, maximum)\
+dimath.**clamp01**(n)\
+dimath.**lerp**(a, b, p) / dimath.**linearInterpolation**(a, b, p)
 
 ## Classes
 ### Vector
 #### Methods
-* add
-* subtract
-* multiply
-* divide
-* negate
-* magnitude
-* normalized
+dimath.**_vector_**.**add**(_self, other_)\
+dimath.**_vector_**.**subtract**(_self, other_)\
+dimath.**_vector_**.**multiply**(_self, other_)\
+dimath.**_vector_**.**divide**(_self, other_)\
+dimath.**_vector_**.**negate**(_self_)\
+dimath.**_vector_**.**magnitude**(_self_)\
+dimath.**_vector_**.**normalized**(_self_)
 
 #### Static Methods
-* dotProduct
-* distance
+dimath.**_vector_**.**dotProduct**(_a, b_)\
+dimath.**_vector_**.**distance**(_a, b_)\
+dimath.**_vector_**.**lerp**(_a, b, p_) / dimath.**linearInterpolation**(_a, b, p_)\
+dimath.**_vector_**.**mean**(_a_) / dimath.**average**(_a_) / dimath.**avg**(_a_)\
+dimath.**_vector_**.**median**(_a_)\
+dimath.**_vector_**.**mode**(_a_)
