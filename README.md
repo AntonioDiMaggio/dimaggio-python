@@ -1,5 +1,5 @@
 # DiMath (Python)
-> Updated: 7/10/2021
+> Updated: 7/17/2021
 
 ![Repository Workflow Status](https://github.com/AntonioDiMaggio/dimaggio-python/actions/workflows/python-package.yml/badge.svg)
 
