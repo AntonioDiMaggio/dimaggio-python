@@ -56,8 +56,17 @@ if "__main__" == __name__:
 * tau
 * properDivisors
 * isAmicablePair
-* fibonnaci
+* fibonacci
 * factorial
+* isPalindrome
+* randomNDigitNumber
+* mean / average / avg
+* median
+* mode
+* setRange
+* clamp
+* clamp01
+* lerp / linearInterpolation
 
 ## Classes
 ### Vector
@@ -73,3 +82,7 @@ if "__main__" == __name__:
 #### Static Methods
 * dotProduct
 * distance
+* lerp / linearInterpolation
+* mean / average / avg
+* median
+* mode
