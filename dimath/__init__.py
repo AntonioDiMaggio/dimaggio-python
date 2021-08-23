@@ -201,9 +201,20 @@ def randomNDigitNumber(n: int) -> int:
     :param n:
     :return:
     """
+    # We cannot have a number with zero or fewer digits so we just return 0. Maybe we should throw an error?
     if n <= 0:
         return 0
-    return int("".join([random.choice(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")) for i in range(n)]))
+
+    # If the number is only one digit then it can be between 0-9.
+    if 1 == n:
+        return int(random.choice(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")))
+
+    # If the number is larger than one digit then the first digit must be between 1-9 and all following digits can be
+    # between 0-9.
+    firstDigit = random.choice(("1", "2", "3", "4", "5", "6", "7", "8", "9"))
+
+    return int(firstDigit +
+               "".join([random.choice(("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")) for i in range(n - 1)]))
 
 
 def mean(a: list) -> float:
